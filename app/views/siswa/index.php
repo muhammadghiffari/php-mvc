@@ -4,15 +4,15 @@
         <div class="col-6">
             <h3 class="mb-4">Daftar Siswa</h3>
 
-            <?php foreach ($data['siswa'] as $siswa) : ?>
-                <ul>
-                    <li><?= $siswa['nama']; ?></li>
-                    <li><?= $siswa['absen']; ?></li>
-                    <li><?= $siswa['email']; ?></li>
-                    <li><?= $siswa['jurusan']; ?></li>
-                </ul>
-                <?php endforeach; ?>    
-                
+            <ul class="list-group">
+                <?php foreach ($data['siswa'] as $siswa) : ?>
+                    <li class="list-group-item">
+                        <?= $siswa ['nama']; ?>
+                        <a href="" class="badge badge rounded-pill text-bg-primary">detail</a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+
         </div>
     </div>
 
