@@ -1,21 +1,22 @@
 <?php
 
-class Siswa_model {
-
-private $table = 'siswa';
-private $db;
-
-public function __construct()
+class Siswa_model
 {
-    $this->db= new Database;
-}
+
+    private $table = 'siswa';
+    private $db;
+
+    public function __construct()
+    {
+        $this->db = new Database;
+    }
 
     public function getAllSiswa()
     {
         $this->db->query('SELECT * FROM ' . $this->table);
         return $this->db->resultSet();
     }
-    
+
     public function getSiswaById($id)
     {
         $this->db->query('SELECT * FROM ' . $this->table . ' WHERE id=:id');
@@ -37,7 +38,7 @@ public function __construct()
 
         $this->db->execute();
 
-        return  $this->db->rowCount();
+        return $this->db->rowCount();
     }
 
     public function hapusDataSiswa($id)
@@ -50,5 +51,37 @@ public function __construct()
 
         return $this->db->rowCount();
     }
+
+
+    public function ubahDataSiswa($data)
+    {
+        $query = "UPDATE siswa SET
+                    nama = :nama,
+                    absen = :absen,
+                    email = :email,
+                    jurusan = :jurusan
+                WHERE id = :id";
+
+        $this->db->query($query);
+        $this->db->bind('nama', $data['nama']);
+        $this->db->bind('absen', $data['absen']);
+        $this->db->bind('email', $data['email']);
+        $this->db->bind('jurusan', $data['jurusan']);
+        $this->db->bind('id', $data['id']);
+
+        $this->db->execute();
+
+        return $this->db->rowCount();
+    }
+
+    public function cariDataSiswa()
+    {
+        $keyword = $_POST['keyword'];
+        $query = "SELECT * FROM siswa WHERE nama LIKE :keyword";
+        $this->db->query($query);
+        $this->db->bind('keyword', "%$keyword%");
+        return $this->db->resultSet();
+    }
+
 
 }
