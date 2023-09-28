@@ -51,20 +51,20 @@
             $this->stmt->bindValue($param, $value, $type);
         }
 
-        // EKSEKUSI
+        // Eksekusi
         public function execute()
         {
             $this->stmt->execute();
         }
 
-        // UNTUK MEMANGGIL BANYAK DATA 
+        // Untuk memanggil banyak data
         public function resultSet()
         {
             $this->execute();
             return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
         }
 
-        // UNTUK MEMANGGIL SATU DATA SAJA
+        // Untuk memanggil hanya satu data
         public function single()
         {
             $this->execute();

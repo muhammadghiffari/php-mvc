@@ -11,6 +11,18 @@
     integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
     crossorigin="anonymous"></script>
 
+  <style>
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #f0f0f0;
+      background: relative;
+      text-align: center;
+      padding: 10px 0;
+    }
+  </style>
+
   <title>Halaman
     <?= $data['judul']; ?>
   </title>
@@ -29,6 +41,12 @@
         <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="<?= BASEURL; ?>">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?= BASEURL; ?>/jurusan">Jurusan</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?= BASEURL; ?>/kelas">Kelas</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="<?= BASEURL; ?>/siswa">Siswa</a>
