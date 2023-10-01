@@ -7,8 +7,8 @@
 
 <!-- Footer -->
 <footer>
-    <div class=" footer text-black text-center">
-      <p text-black> Created by
+    <div class="footer text-black">
+      <p class="text-black"> Created by
         <a href="https://www.instagram.com/ghffxyz/" target="_blank" class="text-black fw-bold">Ghiffari</a>
       </p>
   </footer>

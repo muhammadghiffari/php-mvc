@@ -25,9 +25,9 @@ class Siswa_model
 
     public function tambahDataSiswa($data)
     {
-        $query = "INSERT INTO siswa
+        $query = "INSERT INTO siswa (:nama, :absen, :kelas, :jurusan)
                     VALUES
-                    ('', :nama, :absen, :kelas, :jurusan)";
+                    (:nama, :absen, :kelas, :jurusan)";
 
 
         $this->db->query($query);

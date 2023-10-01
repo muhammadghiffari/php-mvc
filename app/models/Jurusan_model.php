@@ -27,11 +27,13 @@ class Jurusan_model
     {
         $query = "INSERT INTO jurusan
                     VALUES
-                    ('', :dataJurusan)";
+                    ('', :namaJurusan, :deskripsiJurusan)";
 
 
         $this->db->query($query);
-        $this->db->bind('dataJurusan', $data['dataJurusan']);
+        $this->db->bind('namaJurusan', $data['namaJurusan']);
+        $this->db->bind('deskripsiJurusan', $data['deskripsiJurusan']);
+        
         $this->db->execute();
 
         return $this->db->rowCount();
@@ -51,11 +53,13 @@ class Jurusan_model
     public function ubahDataJurusan($data)
     {
         $query = "UPDATE jurusan SET
-                    dataJurusan = :dataJurusan
+                    namaJurusan = :namaJurusan,
+                    deskripsiJurusan = :deskripsiJurusan
                     WHERE id = :id";
 
         $this->db->query($query);
-        $this->db->bind('dataJurusan', $data['dataJurusan']);
+        $this->db->bind('namaJurusan', $data['namaJurusan']);
+        $this->db->bind('deskripsiJurusan', $data['deskripsiJurusan']);
         $this->db->bind('id', $data['id']);
 
         $this->db->execute();
@@ -66,7 +70,7 @@ class Jurusan_model
     public function cariDataJurusan()
     {
         $keyword = $_POST['keyword'];
-        $query = 'SELECT * FROM jurusan WHERE dataJurusan LIKE :keyword';
+        $query = 'SELECT * FROM jurusan WHERE namaJurusan LIKE :keyword';
         $this->db->query($query);
         $this->db->bind('keyword', "%$keyword%");
         return $this->db->resultSet();

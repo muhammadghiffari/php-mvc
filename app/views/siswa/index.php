@@ -77,17 +77,19 @@
 
                     <div class="form-group mb-2">
                         <label for="kelas">Kelas</label>
-                        <select id="kelas" name="kelas" class="form-control">
+                        <select class="form-select mt-1 mb-2" id="kelas" name="kelas"
+                            aria-label="Default select example">
                             <option selected>Pilih kelas...</option>
-                            <option>X</option>
-                            <option>XI</option>
-                            <option>XII</option>
+                            <option value="X">X</option>
+                            <option value="XI">XI</option>
+                            <option value="XII">XII</option>
                         </select>
                     </div>
 
                     <div class="form-group mb-2">
                         <label for="jurusan">Jurusan</label>
-                        <select class="form-control" id="jurusan" name="jurusan">
+                        <select class="form-select mt-1 mb-2" id="jurusan" name="jurusan"
+                            aria-label="Default select example">
                             <option selected>Pilih jurusan...</option>
                             <option value="Rekayasa Perangkat Lunak">Rekayasa Perangkat Lunak</option>
                             <option value="Desain Komunikasi Visual">Desain Komunikasi Visual</option>

@@ -2,14 +2,14 @@
 
     <div class="row">
         <div class="col-lg-6">
-            <?php Flasher::flash(); ?>
+            <?php Flasher::flashJurusan(); ?>
         </div>
     </div>
 
     <!-- Button trigger modal -->
     <div class="row mb-3">
         <div class="col-lg-6">
-            <button type="button" class="btn btn-primary tombolTambahData" data-bs-toggle="modal"
+            <button type="button" class="btn btn-primary tombolTambahDataJurusan" data-bs-toggle="modal"
                 data-bs-target="#formModal">
                 Tambah Data Jurusan
             </button>
@@ -28,18 +28,18 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row mt-5">
         <div class="col-lg-6">
-            <h3 class="mb-3">Daftar Jurusan</h3>
+            <h2 class="mb-2">Daftar Jurusan</h2>
             <ul class="list-group">
-                <?php foreach ($data['dataJurusan'] as $jurusan): ?>
+                <?php foreach ($data['jurusan'] as $jurusan): ?>
                     <li class="list-group-item">
-                        <?= $jurusan['dataJurusan']; ?>
+                        <?= $jurusan['namaJurusan']; ?>
                         <a href="<?= BASEURL; ?>/jurusan/hapus/<?= $jurusan['id']; ?>"
                             class="badge badge rounded-pill text-bg-danger float-end m-lg-1"
                             onclick="return confirm('Apakah anda yakin ingin menghapus?');">Hapus</a>
                         <a href="<?= BASEURL; ?>/jurusan/ubah/<?= $jurusan['id']; ?>"
-                            class="badge badge rounded-pill text-bg-success float-end m-lg-1 tampilModalUbah"
+                            class="badge badge rounded-pill text-bg-success float-end m-lg-1 tampilModalUbahJurusan"
                             data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?= $jurusan['id']; ?>">Ubah</a>
                         <a href="<?= BASEURL; ?>/jurusan/detail/<?= $jurusan['id']; ?>"
                             class="badge badge rounded-pill text-bg-primary float-end m-lg-1">Detail</a>
@@ -58,7 +58,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="formModalLabel">Tambah Data Jurusan</h1>
+                <h1 class="modal-title fs-5" id="formModalLabelJurusan">Tambah Data Jurusan</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
@@ -67,14 +67,11 @@
                     <input type="hidden" name="id" id="id">
                     <div class="form-group mb-2">
                         <label for="jurusan">Jurusan</label>
-                        <select class="form-control" id="jurusan" name="jurusan">
-                            <option selected>Pilih jurusan...</option>
-                            <option value="Rekayasa Perangkat Lunak">Rekayasa Perangkat Lunak</option>
-                            <option value="Desain Komunikasi Visual">Desain Komunikasi Visual</option>
-                            <option value="Manajemen Perkantoran">Manajemen Perkantoran</option>
-                            <option value="Akuntansi">Akuntansi</option>
-                            <option value="Bisnis Ritel">Bisnis Ritel</option>
-                        </select>
+                        <input type="text" placeholder="Rekayasa Perangkat Lunak" class="form-control" id="jurusan" name="jurusan">
+                    </div>
+                    <div class="form-group mb-2">
+                        <label for="deskripsiJurusan">Deskripsi jurusan</label>
+                        <input type="text" placeholder="Jurusan ini fokus pada pengembangan perangkat lunak, pe..."class="form-control" id="jurusan" name="jurusan">
                     </div>
             </div>
 
