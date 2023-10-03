@@ -54,6 +54,9 @@
             <a class="nav-link" href="<?= BASEURL; ?>/jurusan">Jurusan</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="<?= BASEURL; ?>/guru">Guru</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="<?= BASEURL; ?>/kelas">Kelas</a>
           </li>
           <li class="nav-item">

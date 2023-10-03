@@ -25,12 +25,12 @@ class Siswa_model
 
     public function tambahDataSiswa($data)
     {
-        $query = "INSERT INTO siswa (:nama, :absen, :kelas, :jurusan)
+        $query = "INSERT INTO siswa (nama, absen, kelas, jurusan)
                     VALUES
-                    (:nama, :absen, :kelas, :jurusan)";
-
+                    (:id, :nama, :absen, :kelas, :jurusan)";
 
         $this->db->query($query);
+        $this->db->bind('id', $data['id']);
         $this->db->bind('nama', $data['nama']);
         $this->db->bind('absen', $data['absen']);
         $this->db->bind('kelas', $data['kelas']);

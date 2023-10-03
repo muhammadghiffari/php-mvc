@@ -1,8 +1,8 @@
 <?php
 
-class Jurusan_model
+class Guru_model
 {
-    private $table = 'jurusan';
+    private $table = 'guru';
     private $db;
 
     public function __construct()
@@ -10,38 +10,37 @@ class Jurusan_model
         $this->db = new Database;
     }
 
-    public function getAllJurusan()
+    public function getAllGuru()
     {
         $this->db->query('SELECT * FROM ' . $this->table);
         return $this->db->resultSet();
     }
 
-    public function getJurusanById($id)
+    public function getGuruById($id)
     {
         $this->db->query('SELECT * FROM ' . $this->table . ' WHERE id=:id');
         $this->db->bind('id', $id);
         return $this->db->single();
     }
 
-    public function tambahDataJurusan($data)
+    public function tambahDataGuru($data)
     {
-        $query = "INSERT INTO jurusan (namaJurusan, deskripsiJurusan)
+        $query = "INSERT INTO guru (namaGuru, deskripsiGuru)
                     VALUES
-                    (:id, :namaJurusan, :deskripsiJurusan)";
+                    (:namaGuru, :deskripsiGuru)";
 
         $this->db->query($query);
-        $this->db->bind('id', $data['id']);
-        $this->db->bind('namaJurusan', $data['namaJurusan']);
-        $this->db->bind('deskripsiJurusan', $data['deskripsiJurusan']);
+        $this->db->bind('namaGuru', $data['namaGuru']);
+        $this->db->bind('deskripsiGuru', $data['deskripsiGuru']);
 
         $this->db->execute();
 
         return $this->db->rowCount();
     }
 
-    public function hapusDataJurusan($id)
+    public function hapusDataGuru($id)
     {
-        $query = "DELETE FROM jurusan WHERE id = :id";
+        $query = "DELETE FROM guru WHERE id = :id";
         $this->db->query($query);
         $this->db->bind('id', $id);
 
@@ -50,16 +49,16 @@ class Jurusan_model
         return $this->db->rowCount();
     }
 
-    public function ubahDataJurusan($data)
+    public function ubahDataGuru($data)
     {
-        $query = "UPDATE jurusan SET
-                    namaJurusan = :namaJurusan,
-                    deskripsiJurusan = :deskripsiJurusan
+        $query = "UPDATE guru SET
+                    namaGuru = :namaGuru,
+                    deskripsiGuru = :deskripsiGuru
                     WHERE id = :id";
 
         $this->db->query($query);
-        $this->db->bind('namaJurusan', $data['namaJurusan']);
-        $this->db->bind('deskripsiJurusan', $data['deskripsiJurusan']);
+        $this->db->bind('namaGuru', $data['namaGuru']);
+        $this->db->bind('deskripsiGuru', $data['deskripsiGuru']);
         $this->db->bind('id', $data['id']);
 
         $this->db->execute();
@@ -67,10 +66,10 @@ class Jurusan_model
         return $this->db->rowCount();
     }
 
-    public function cariDataJurusan()
+    public function cariDataGuru()
     {
         $keyword = $_POST['keyword'];
-        $query = 'SELECT * FROM jurusan WHERE namaJurusan LIKE :keyword';
+        $query = 'SELECT * FROM guru WHERE namaGuru LIKE :keyword';
         $this->db->query($query);
         $this->db->bind('keyword', "%$keyword%");
         return $this->db->resultSet();

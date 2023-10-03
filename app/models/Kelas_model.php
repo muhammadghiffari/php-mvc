@@ -27,11 +27,11 @@ class Kelas_model
     {
         $query = "INSERT INTO kelas
                     VALUES
-                    ('', :dataKelas)";
+                    ('', :namaKelas)";
 
 
         $this->db->query($query);
-        $this->db->bind('dataKelas', $data['dataKelas']);
+        $this->db->bind('namaKelas', $data['namaKelas']);
         $this->db->execute();
 
         return $this->db->rowCount();
@@ -51,11 +51,11 @@ class Kelas_model
     public function ubahDataKelas($data)
     {
         $query = "UPDATE kelas SET
-                    dataKelas = :dataKelas
+                    namaKelas = :namaKelas
                     WHERE id = :id";
 
         $this->db->query($query);
-        $this->db->bind('dataKelas', $data['dataKelas']);
+        $this->db->bind('namaKelas', $data['namaKelas']);
         $this->db->bind('id', $data['id']);
 
         $this->db->execute();
@@ -66,7 +66,7 @@ class Kelas_model
     public function cariDataKelas()
     {
         $keyword = $_POST['keyword'];
-        $query = 'SELECT * FROM kelas WHERE dataKelas LIKE :keyword';
+        $query = 'SELECT * FROM kelas WHERE namaKelas LIKE :keyword';
         $this->db->query($query);
         $this->db->bind('keyword', "%$keyword%");
         return $this->db->resultSet();
