@@ -30,7 +30,7 @@
 
     <div class="row mt-5">
         <div class="col-lg-6">
-            <h2 class="mb-2">Daftar Jurusan</h2>
+            <h2 class="mb-4">Daftar Jurusan</h2>
             <ul class="list-group">
                 <?php foreach ($data['jurusan'] as $jurusan): ?>
                     <li class="list-group-item">
@@ -66,12 +66,12 @@
                 <form action="<?= BASEURL; ?>/jurusan/tambah" method="post">
                     <input type="hidden" name="id" id="id">
                     <div class="form-group mb-2">
-                        <label for="jurusan">Jurusan</label>
-                        <input type="text" class="form-control" id="namaJurusan" name="namaJurusan">
+                        <label for="namaJurusan">Jurusan</label>
+                        <input type="text" class="form-control" placeholder="Rekayasa Perangkat Lunak" id="namaJurusan" name="namaJurusan">
                     </div>
                     <div class="form-group mb-2">
                         <label for="deskripsiJurusan">Deskripsi jurusan</label>
-                        <input type="text" class="form-control" id="deskripsiJurusan" name="deskripsiJurusan">
+                        <input type="text" class="form-control" placeholder="Jurusan ini fokus pada pengembangan perangkat lunak, pe..." id="deskripsiJurusan" name="deskripsiJurusan">
                     </div>
             </div>
 

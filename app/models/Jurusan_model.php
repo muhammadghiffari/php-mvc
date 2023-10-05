@@ -27,10 +27,9 @@ class Jurusan_model
     {
         $query = "INSERT INTO jurusan (namaJurusan, deskripsiJurusan)
                     VALUES
-                    (:id, :namaJurusan, :deskripsiJurusan)";
+                    (:namaJurusan, :deskripsiJurusan)";
 
         $this->db->query($query);
-        $this->db->bind('id', $data['id']);
         $this->db->bind('namaJurusan', $data['namaJurusan']);
         $this->db->bind('deskripsiJurusan', $data['deskripsiJurusan']);
 

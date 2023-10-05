@@ -30,7 +30,7 @@
 
     <div class="row mt-5">
         <div class="col-lg-6">
-            <h2 class="mb-2">Daftar Guru</h2>
+            <h2 class="mb-4">Daftar Guru</h2>
             <ul class="list-group">
                 <?php foreach ($data['guru'] as $guru): ?>
                     <li class="list-group-item">
@@ -67,11 +67,11 @@
                     <input type="hidden" name="id" id="id">
                     <div class="form-group mb-2">
                         <label for="namaGuru">Guru</label>
-                        <input type="text" class="form-control" id="namaGuru" name="namaGuru">
+                        <input type="text" class="form-control" placeholder="Nugro N Agung Pribadi, S.Pd" id="namaGuru" name="namaGuru">
                     </div>
                     <div class="form-group mb-2">
                         <label for="deskripsiGuru">Deskripsi guru</label>
-                        <input type="text" class="form-control" id="deskripsiGuru" name="deskripsiGuru">
+                        <input type="text" class="form-control" placeholder="Guru Mata Pelajaran Rekayasa Perangkat Lunak" id="deskripsiGuru" name="deskripsiGuru">
                     </div>
             </div>
 

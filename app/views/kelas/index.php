@@ -28,9 +28,9 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row mt-5">
         <div class="col-lg-6">
-            <h2 class="mb-3">Daftar Kelas</h2>
+            <h2 class="mb-4">Daftar Kelas</h2>
             <ul class="list-group">
                 <?php foreach ($data['kelas'] as $kelas): ?>
                     <li class="list-group-item">
@@ -65,7 +65,7 @@
                     <input type="hidden" name="id" id="id">
                     <div class="form-group mb-2">
                         <label for="kelas">Kelas</label>
-                        <input type="kelas" placeholder="10" class="form-control" id="kelas" name="kelas">
+                        <input type="kelas" placeholder="XI" class="form-control" id="namaKelas" name="namaKelas">
                     </div>
             </div>
 

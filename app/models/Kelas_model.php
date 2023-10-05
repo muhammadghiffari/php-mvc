@@ -25,10 +25,9 @@ class Kelas_model
 
     public function tambahDataKelas($data)
     {
-        $query = "INSERT INTO kelas
+        $query = "INSERT INTO kelas (namaKelas)
                     VALUES
-                    ('', :namaKelas)";
-
+                    (:namaKelas)";
 
         $this->db->query($query);
         $this->db->bind('namaKelas', $data['namaKelas']);
